@@ -1,0 +1,19 @@
+<div class="calendar-container">
+  <h2>Calendario de Disponibilidad</h2>
+
+  <!-- Selección de fecha -->
+  <mat-form-field appearance="fill">
+    <mat-label>Selecciona una fecha</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <!-- Mostrar horas disponibles -->
+  <div *ngIf="selectedDate">
+    <h3>Horas disponibles:</h3>
+    <ul>
+      <li *ngFor="let time of availableTimes" class="time-slot">{{ time }}</li>
+    </ul>
+  </div>
+</div>

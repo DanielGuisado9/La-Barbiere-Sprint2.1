@@ -1,0 +1,83 @@
+.navbar {
+  background: linear-gradient(90deg, #ff0000, #ffffff, #0000ff); /* Gradiente más suave */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  z-index: 1000;
+  box-sizing: border-box; /* Asegura que el relleno no afecte al ancho */
+}
+
+.navbar-container {
+  max-width: 1200px; /* Centra y limita el ancho del contenido */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+}
+
+.navbar-brand a {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-brand a:hover {
+  color: #ff8a00;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin-left: 40px;
+}
+
+.navbar-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar-item a:hover {
+  color: #ff8a00;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* Oculta el menú por defecto */
+  }
+
+  .navbar-menu.show {
+    display: flex; /* Muestra el menú cuando está activado */
+  }
+
+  .navbar-item {
+    margin: 10px 0;
+  }
+
+  .navbar-toggler {
+    display: block; /* Muestra el botón hamburguesa */
+    margin-left: auto;
+  }
+}
